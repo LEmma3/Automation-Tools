@@ -1,6 +1,6 @@
-import HomePage from "../../support/page_object/HomePage";
+import HomePage from '../../support/page_object/HomePage';
 
-describe("Language change", () => {
+describe('Language change', () => {
     it('should show relevant results matching the searched keyword', () => {
         const homePage = new HomePage();
         homePage.open();
@@ -11,6 +11,6 @@ describe("Language change", () => {
         homePage.productTitleByName('Court Hammer').should('be.visible');
         homePage.productTitles().each(($el) => {
             expect($el.text().toLowerCase()).to.include('hammer');
-            });
+        });
     });
 });

@@ -1,13 +1,26 @@
-class HomePage{
+class HomePage {
+    get languageDropdown() {
+        return cy.get('[data-test="language-select"]');
+    }
+    get spanishLanguage() {
+        return cy.get('[data-test="lang-es"]');
+    }
+    get englishLanguage() {
+        return cy.get('[data-test="lang-en"]');
+    }
+    get homeTextTranslate() {
+        return cy.get('a[data-test="nav-home"]');
+    }
 
-    get languageDropdown() {return cy.get('[data-test="language-select"]')}
-    get spanishLanguage() { return cy.get('[data-test="lang-es"]')}
-    get englishLanguage() { return cy.get('[data-test="lang-en"]');}
-    get homeTextTranslate() {return cy.get('a[data-test="nav-home"]'); }
-
-    searchInput() { return cy.get('input[data-test="search-query"]');}
-    searchButton() { return cy.get('button[data-test="search-submit"]');}
-    productTitles() { return cy.get('.card-title'); }
+    searchInput() {
+        return cy.get('input[data-test="search-query"]');
+    }
+    searchButton() {
+        return cy.get('button[data-test="search-submit"]');
+    }
+    productTitles() {
+        return cy.get('.card-title');
+    }
 
     open() {
         cy.visit('https://practicesoftwaretesting.com/');
@@ -17,8 +30,7 @@ class HomePage{
         return cy.get('#language');
     }
 
-
-     searchForProduct(keyword) {
+    searchForProduct(keyword) {
         this.searchInput().clear().type(keyword);
         this.searchButton().click();
     }
@@ -38,20 +50,16 @@ class HomePage{
     }
 
     compareButtons() {
-    return cy.get('[data-test="compare-btn"]');
-  }
+        return cy.get('[data-test="compare-btn"]');
+    }
 
-  compareNowLink() {
-    return cy.get('[data-test="compare-link"]');
-  }
+    compareNowLink() {
+        return cy.get('[data-test="compare-link"]');
+    }
 
     addProductToCompare(index) {
-        this.compareButtons()
-      .eq(index)
-      .should('be.visible')
-      .and('be.enabled')
-      .click();
-     }
+        this.compareButtons().eq(index).should('be.visible').and('be.enabled').click();
+    }
 
     goToComparison() {
         this.compareNowLink().click();
@@ -64,7 +72,6 @@ class HomePage{
     productPrices() {
         return cy.get('[data-test="product-price"]');
     }
-
 }
 
 export default HomePage;

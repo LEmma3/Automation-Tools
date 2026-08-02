@@ -8,7 +8,11 @@
     "report:merge": "mochawesome-merge cypress/reports/mochawesome/*.json > cypress/reports/mochawesome.json",
     "report:generate": "marge cypress/reports/mochawesome.json --reportDir cypress/reports/html --inline",
     "report": "run-s report:merge report:generate",
-    "test": "run-s -c cy:run report"
+    "test": "run-s -c cy:run report",
+    "lint": "eslint .",
+    "lint:fix": "eslint cypress/**/*.js cypress.config.js --fix",
+    "format": "prettier --write \"cypress/**/*.js\" \"cypress.config.js\"",
+    "format:check": "prettier --check \"cypress/**/*.js\" \"cypress.config.js\""
   },
   "repository": {
     "type": "git",
@@ -29,10 +33,15 @@
   "devDependencies": {
     "cypress": "^15.19.0",
     "cypress-multi-reporters": "^2.0.5",
+    "eslint": "^10.8.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-cypress": "^6.4.3",
+    "globals": "^17.8.0",
     "mochawesome": "^8.0.0",
     "mochawesome-merge": "^5.1.1",
     "mochawesome-report-generator": "^6.3.2",
     "npm-run-all2": "^8.0.4",
+    "prettier": "^3.9.6",
     "rimraf": "^6.1.3"
   }
 }
