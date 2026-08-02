@@ -1,0 +1,38 @@
+{
+  "name": "results-reporting-cypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:run": "rimraf cypress/reports && cypress run",
+    "report:merge": "mochawesome-merge cypress/reports/mochawesome/*.json > cypress/reports/mochawesome.json",
+    "report:generate": "marge cypress/reports/mochawesome.json --reportDir cypress/reports/html --inline",
+    "report": "run-s report:merge report:generate",
+    "test": "run-s -c cy:run report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LEmma3/Results-Reporting-Cypress.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/LEmma3/Results-Reporting-Cypress/issues"
+  },
+  "homepage": "https://github.com/LEmma3/Results-Reporting-Cypress#readme",
+  "dependencies": {
+    "modules": "^0.4.0",
+    "node": "^26.5.1"
+  },
+  "devDependencies": {
+    "cypress": "^15.19.0",
+    "cypress-multi-reporters": "^2.0.5",
+    "mochawesome": "^8.0.0",
+    "mochawesome-merge": "^5.1.1",
+    "mochawesome-report-generator": "^6.3.2",
+    "npm-run-all2": "^8.0.4",
+    "rimraf": "^6.1.3"
+  }
+}
