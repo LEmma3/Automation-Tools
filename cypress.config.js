@@ -10,7 +10,7 @@ module.exports = defineConfig({
 
     e2e: {
         baseUrl: 'https://practicesoftwaretesting.com/',
-        specPattern: 'cypress/e2e/tests/**/*.cy.js',
+        specPattern: 'cypress/e2e/Tests/**/*.cy.js',
         viewportWidth: 1280,
         viewportHeight: 720,
         defaultCommandTimeout: 6000,
