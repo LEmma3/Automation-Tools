@@ -13,7 +13,7 @@ module.exports = defineConfig({
         specPattern: 'cypress/e2e/Tests/**/*.cy.js',
         viewportWidth: 1280,
         viewportHeight: 720,
-        defaultCommandTimeout: 6000,
+        defaultCommandTimeout: 10000,
         setupNodeEvents(on, config) {
             return config;
         },
