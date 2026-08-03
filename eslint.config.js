@@ -1,7 +1,10 @@
+const js = require('@eslint/js');
+const eslintConfigPrettier = require('eslint-config-prettier');
 const cypressPlugin = require('eslint-plugin-cypress');
 const globals = require('globals');
 
 module.exports = [
+  js.configs.recommended,
   {
     ignores: [
       'node_modules/**',
@@ -9,6 +12,7 @@ module.exports = [
       'cypress/downloads/**',
       'cypress/screenshots/**',
       'cypress/videos/**',
+      'eslint.config.js'
     ],
   },
   {
@@ -38,4 +42,5 @@ module.exports = [
       sourceType: 'module',
     },
   },
+  eslintConfigPrettier,
 ];
