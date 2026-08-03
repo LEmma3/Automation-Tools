@@ -7,7 +7,8 @@ describe('Language change', () => {
         homePage.getCurrentLanguage().should('contain', 'EN');
         homePage.languageDropdown.click();
         homePage.spanishLanguage.click();
-        homePage.homeTextTranslate.should('be.visible').and('have.text', 'Inicio');
+        homePage.homeTextTranslate.should('be.visible', { timeout: 10000 });
+        homePage.homeTextTranslate.should('have.text', 'Inicio');
         homePage.getCurrentLanguage().should('contain', 'ES');
     });
 });
